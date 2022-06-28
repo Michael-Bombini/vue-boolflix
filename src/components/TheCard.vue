@@ -13,7 +13,7 @@
         <p class="card-text">Descrizione.....</p>
         <p>Voto {{ printVoto(card.vote_average) }}</p>
         <span v-for="n in printVoto(card.vote_average)" :key="n"
-          >s{{ n }} </span
+          ><img src="https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/512x512/star.png" alt="" class="star"></span
         >
       </div>
     </div>
@@ -41,5 +41,9 @@ export default {
   img {
     width: 50px;
   }
+}
+
+img.star {
+  width: 32px;
 }
 </style>
