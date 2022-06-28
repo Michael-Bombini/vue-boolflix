@@ -28,7 +28,6 @@ import axios from 'axios';
             },
 
             fetchSearched() {
-                state.errore = false;
                 if(state.searched)
                 {
                 axios
@@ -41,9 +40,6 @@ import axios from 'axios';
                 .then((response) => {
                     state.movies = response.data.results;
                 });
-                }
-                else{
-                    state.errore = true;
                 }
   }
 

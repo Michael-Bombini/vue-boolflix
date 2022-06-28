@@ -5,6 +5,5 @@ export const state = Vue.observable({
   movies: [],
   series: [],
   searched: "",
-  errore: false,
 });
 

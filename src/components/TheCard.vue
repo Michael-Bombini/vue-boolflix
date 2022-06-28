@@ -25,7 +25,7 @@
 
 <style lang="scss" scoped>
 .card {
-    height: 300px;
+    height: 100%;
 
     img {
         width: 50px;
