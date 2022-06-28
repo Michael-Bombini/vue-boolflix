@@ -11,7 +11,10 @@
         <h6 class="card-title">{{ card.original_title }}</h6>
         <h6 class="card-title">Lingua : {{ card.original_language }}</h6>
         <p class="card-text">Descrizione.....</p>
-        <p>Voto {{ card.vote_average }}</p>
+        <p>Voto {{ printVoto(card.vote_average) }}</p>
+        <span v-for="n in printVoto(card.vote_average)" :key="n"
+          >s{{ n }} </span
+        >
       </div>
     </div>
   </div>
@@ -22,6 +25,11 @@ export default {
   name: "TheCard",
   props: {
     card: Object,
+  },
+  methods: {
+    printVoto(voto) {
+      return Math.round(voto / 2);
+    },
   },
 };
 </script>
