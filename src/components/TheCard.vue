@@ -46,13 +46,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.card {
-  height: 100%;
 
-  img {
-    width: 50px;
-  }
-}
 
 img.star {
   width: 32px;
