@@ -26,13 +26,19 @@
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                 <span>Scegli la lingua</span>
+                  <span>Scegli la lingua</span>
                 </a>
                 <ul
                   class="dropdown-menu dropdown-menu-dark"
                   aria-labelledby="navbarDarkDropdownMenuLink"
                 >
-                  <li v-for="(flag,i) in flags" :key="flag.language + i" class="text-center" @click="getLanguage(i)">
+                  <li
+                    v-for="(flag, i) in flags"
+                    :key="flag.language + i"
+                    class="text-center"
+                    @click="getLanguage(i)"
+                    :class="{ 'bg-danger': i === languageIndex }"
+                  >
                     <a class="dropdown-item" href="#"
                       ><img :src="flag.flag" class="flag text-center" alt=""
                     /></a>
@@ -75,18 +81,17 @@ export default {
           language: "it",
           flag: require("../../public/italy-flag.png"),
         },
-          {
+        {
           language: "ja",
           flag: require("../../public/japan-flag.png"),
         },
-          {
+        {
           language: "en",
           flag: require("../../public/english-flag.png"),
         },
-
       ],
 
-      languageIndex : 0,
+      languageIndex: 0,
     };
   },
 
@@ -97,12 +102,12 @@ export default {
       this.fetchSearched();
     },
 
-    getLanguage(i){
-        console.log(i);
-        console.log(this.flags[i].language);
-        state.currentLanguage = this.flags[i].language;
-        this.languageIndex = i ;
-        console.log(this.languageIndex);
+    getLanguage(i) {
+      console.log(i);
+      console.log(this.flags[i].language);
+      state.currentLanguage = this.flags[i].language;
+      this.languageIndex = i;
+      console.log(this.languageIndex);
     },
 
     fetchSearched() {
@@ -120,7 +125,6 @@ export default {
           });
       }
     },
-
   },
 };
 </script>
