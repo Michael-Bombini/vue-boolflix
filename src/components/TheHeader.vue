@@ -26,16 +26,16 @@
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Dropdown
+                 <span>Scegli la lingua</span>
                 </a>
                 <ul
                   class="dropdown-menu dropdown-menu-dark"
                   aria-labelledby="navbarDarkDropdownMenuLink"
                 >
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                  <li v-for="(flag,i) in flags" :key="flag.language + i" class="text-center" @click="getLanguage(i)">
+                    <a class="dropdown-item" href="#"
+                      ><img :src="flag.flag" class="flag text-center" alt=""
+                    /></a>
                   </li>
                 </ul>
               </li>
@@ -70,6 +70,23 @@ export default {
   data() {
     return {
       searchedTitle: "",
+      flags: [
+        {
+          language: "it",
+          flag: require("../../public/italy-flag.png"),
+        },
+          {
+          language: "ja",
+          flag: require("../../public/japan-flag.png"),
+        },
+          {
+          language: "en",
+          flag: require("../../public/english-flag.png"),
+        },
+
+      ],
+
+      languageIndex : 0,
     };
   },
 
@@ -80,6 +97,14 @@ export default {
       this.fetchSearched();
     },
 
+    getLanguage(i){
+        console.log(i);
+        console.log(this.flags[i].language);
+        state.currentLanguage = this.flags[i].language;
+        this.languageIndex = i ;
+        console.log(this.languageIndex);
+    },
+
     fetchSearched() {
       if (state.searched) {
         axios
@@ -87,7 +112,7 @@ export default {
             params: {
               api_key: "049efd07b3cd401f7f0d67417708f39c",
               query: state.searched,
-              language: "it-IT",
+              language: state.currentLanguage,
             },
           })
           .then((response) => {
@@ -95,8 +120,13 @@ export default {
           });
       }
     },
+
   },
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.flag {
+  width: 32px;
+}
+</style>
