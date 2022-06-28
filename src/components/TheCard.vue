@@ -1,0 +1,29 @@
+<template>
+    <div>
+        <div class="card">
+            <img class="card-img-top"  alt="Card image cap">
+            <div class="card-body">
+                <h3 class="card-title">{{card.title}}</h3>
+                <h6 class="card-title">{{card.original_title}}</h6>
+                <h6 class="card-title">Lingua : {{card.original_language}}</h6>
+                <p class="card-text">Descrizione.....</p>
+                <p>Voto {{card.vote_average}}</p>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+    export default {
+        name : "TheCard",
+        props: {
+            card : Object,
+        }
+    }
+</script>
+
+<style lang="scss" scoped>
+.card {
+    height: 300px;
+}
+</style>

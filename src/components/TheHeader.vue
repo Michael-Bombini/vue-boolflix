@@ -22,12 +22,15 @@ import axios from 'axios';
 
         methods : {
             getSearchedTitle(){
-                state.searched = this.searchedTitle;
+                state.searched = this.searchedTitle.trim();
                 console.log(state.searched);
                 this.fetchSearched();  
             },
 
             fetchSearched() {
+                state.errore = false;
+                if(state.searched)
+                {
                 axios
                 .get("https://api.themoviedb.org/3/search/movie", {
                 params: {
@@ -38,6 +41,10 @@ import axios from 'axios';
                 .then((response) => {
                     state.movies = response.data.results;
                 });
+                }
+                else{
+                    state.errore = true;
+                }
   }
 
 
