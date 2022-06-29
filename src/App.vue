@@ -27,4 +27,10 @@ export default {
         color: #fff;
 }
 }
+
+#app,html{
+  height: 100%;
+  background-color: #141414;
+}
+
 </style>

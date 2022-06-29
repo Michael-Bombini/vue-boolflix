@@ -26,7 +26,7 @@
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  <span>Lingua risultati</span>
+                  <span class="text-light">Lingua risultati</span>
                 </a>
                 <ul
                   class="dropdown-menu dropdown-menu-dark"
@@ -57,7 +57,7 @@
         v-model="searchedTitle" @keypress.enter="getSearchedTitle"
       />
       <button
-        class="btn btn-outline-secondary"
+        class="btn btn-outline-secondary text-light"
         type="button"
         id="button-addon2"
         @click="getSearchedTitle"
