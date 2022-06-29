@@ -4,7 +4,8 @@
       <img
         class="card-img-top"
         :alt="`Immagine del film ${card.title}`"
-        :src="`https://image.tmdb.org/t/p/original/${card.poster_path}`"
+        :src="poster"
+        @error="cambiaImgError"
       />
       <div class="card-body">
         <h3 class="card-title" v-if="card.title!==undefined">{{ card.title }}</h3>
@@ -39,15 +40,44 @@ export default {
   props: {
     card: Object,
   },
+  data(){
+    return{
+      poster : `https://image.tmdb.org/t/p/original/${this.card.poster_path}`,
+    }
+  },
   methods: {
     printVoto(voto) {
       return Math.round(voto / 2);
     },
+    cambiaImgError(){
+      this.poster = `https://d32qys9a6wm9no.cloudfront.net/images/movies/poster/500x735.png`;
+    }
   },
 };
 </script>
 
 <style lang="scss" scoped>
+.card-body {display: none;}
+.card {
+
+
+  img{
+    max-height: 400px;
+  }
+
+}
+
+
+.card:hover .card-body{
+display: block;
+position: absolute;
+background: rgba(0,0,0,0.7);
+color: #fff;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+}
 
 
 img.star {
