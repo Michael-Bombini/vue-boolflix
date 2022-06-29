@@ -54,7 +54,7 @@
         type="text"
         class="form-control bg-dark text-light"
         placeholder="Inserisci titolo da cercare"
-        v-model="searchedTitle"
+        v-model="searchedTitle" @keypress.enter="getSearchedTitle"
       />
       <button
         class="btn btn-outline-secondary"
