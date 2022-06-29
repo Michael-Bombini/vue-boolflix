@@ -26,7 +26,7 @@
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  <span>Scegli la lingua</span>
+                  <span>Lingua risultati</span>
                 </a>
                 <ul
                   class="dropdown-menu dropdown-menu-dark"

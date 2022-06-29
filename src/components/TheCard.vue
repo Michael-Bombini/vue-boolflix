@@ -11,7 +11,7 @@
         <h3 class="card-title" v-else>{{card.name}}</h3>
         <h6 class="card-title" v-if="card.original_title!==undefined">{{ card.original_title }}</h6>
         <h6 class="card-title" v-else>{{ card.original_name}}</h6>
-        <h6 class="card-title">Lingua : {{ card.original_language }}</h6>
+        <lang-flag :iso="card.original_language " />
         <p class="card-text">Descrizione.....</p>
         <p>Voto {{ printVoto(card.vote_average) }}</p>
         <span v-for="n in 5" :key="n">
