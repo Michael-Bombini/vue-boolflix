@@ -1,12 +1,12 @@
 <template>
   <div>
     <div class="card">
-      <img
+      <img v-if="card.poster_path!==null"
         class="card-img-top"
-        :alt="`Immagine del film ${card.title}`"
-        :src="poster"
-        @error="cambiaImgError"
+        alt="Immagine del film"
+        :src="`https://image.tmdb.org/t/p/original/${card.poster_path}`"
       />
+      <img v-if="card.poster_path===null" src="https://d32qys9a6wm9no.cloudfront.net/images/movies/poster/500x735.png" alt="">
       <div class="card-body">
         <h3 class="card-title" v-if="card.title!==undefined">{{ card.title }}</h3>
         <h3 class="card-title" v-else>{{card.name}}</h3>
@@ -40,18 +40,10 @@ export default {
   props: {
     card: Object,
   },
-  data(){
-    return{
-      poster : `https://image.tmdb.org/t/p/original/${this.card.poster_path}`,
-    }
-  },
   methods: {
     printVoto(voto) {
       return Math.round(voto / 2);
     },
-    cambiaImgError(){
-      this.poster = `https://d32qys9a6wm9no.cloudfront.net/images/movies/poster/500x735.png`;
-    }
   },
 };
 </script>

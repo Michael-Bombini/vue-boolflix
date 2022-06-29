@@ -11,10 +11,10 @@
         </div>
       </div>
       <div
-        class="row g-4"
+        class="row g-4 m-3"
         v-if="getSeriesList.length > 0 && getSeriesList !== undefined"
       >
-        <h1>Serie</h1>
+        <h1 class="py-2">Serie</h1>
         <div class="col-3" v-for="(serie, i) in getSeriesList" :key="i">
           <TheCard :card="serie" />
         </div>
