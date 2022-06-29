@@ -23,7 +23,7 @@
             v-if="n <= printVoto(card.vote_average)"
           />
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Five_Pointed_Star_Solid.svg/2175px-Five_Pointed_Star_Solid.svg.png"
+            src="https://simg.nicepng.com/png/small/1-16904_star-star-white-five-pointed-star.png"
             class="star"
             alt=""
             v-else
@@ -74,5 +74,6 @@ bottom: 0;
 
 img.star {
   width: 32px;
+  height: 32px;
 }
 </style>
