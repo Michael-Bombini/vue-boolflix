@@ -3,7 +3,7 @@
     <div class="input-group mb-3">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand text-danger" href="">BOOLFLIX</a>
+          <a class="navbar-brand text-danger" href=""><img src="../../public/logo.png" alt="" class="logo"></a>
           <button
             class="navbar-toggler"
             type="button"
@@ -153,5 +153,11 @@ export default {
 <style lang="scss" scoped>
 .flag {
   width: 32px;
+}
+.logo {width: 240px;}
+
+input[type="text"] {
+  font-size: 1.8rem;
+  
 }
 </style>
