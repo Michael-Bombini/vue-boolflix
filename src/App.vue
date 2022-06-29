@@ -19,6 +19,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 * {margin: 0; padding: 0; box-sizing: border-box;}
 
 #app {
@@ -31,6 +32,7 @@ export default {
 #app,html{
   height: 100%;
   background-color: #141414;
+  font-family: 'Bebas Neue', cursive;
 }
 
 </style>
