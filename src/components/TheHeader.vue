@@ -89,6 +89,14 @@ export default {
           language: "en",
           flag: require("../../public/english-flag.png"),
         },
+         {
+          language: "fr",
+          flag: require("../../public/france-flag.png"),
+        },
+        {
+          language: "es",
+          flag: require("../../public/spain-flag.png"),
+        },
       ],
 
       languageIndex: 0,
