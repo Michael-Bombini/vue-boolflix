@@ -7,8 +7,10 @@
         :src="`https://image.tmdb.org/t/p/original/${card.poster_path}`"
       />
       <div class="card-body">
-        <h3 class="card-title">{{ card.title }}</h3>
-        <h6 class="card-title">{{ card.original_title }}</h6>
+        <h3 class="card-title" v-if="card.title!==undefined">{{ card.title }}</h3>
+        <h3 class="card-title" v-else>{{card.name}}</h3>
+        <h6 class="card-title" v-if="card.original_title!==undefined">{{ card.original_title }}</h6>
+        <h6 class="card-title" v-else>{{ card.original_name}}</h6>
         <h6 class="card-title">Lingua : {{ card.original_language }}</h6>
         <p class="card-text">Descrizione.....</p>
         <p>Voto {{ printVoto(card.vote_average) }}</p>
