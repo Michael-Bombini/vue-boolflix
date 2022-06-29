@@ -53,10 +53,10 @@ export default {
 .card {
 
 
-  img{
-    max-height: 400px;
-  }
-
+height: 390px;
+img {
+  height: 100%;
+}
 }
 
 

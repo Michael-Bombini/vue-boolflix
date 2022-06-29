@@ -13,7 +13,7 @@
     </div>
     <div class="container">
       <div
-        class="row g-4 m-3"
+        class="row g-4"
         v-if="getSeriesList.length > 0 && getSeriesList !== undefined"
       >
         <h1 class="text-light">Serie</h1>
