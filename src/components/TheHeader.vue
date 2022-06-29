@@ -119,6 +119,7 @@ export default {
     },
 
     fetchSearched() {
+      state.firstSearch = false;
       if (state.searched) {
         axios
           .get("https://api.themoviedb.org/3/search/movie", {

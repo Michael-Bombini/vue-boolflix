@@ -19,7 +19,7 @@
           <TheCard :card="serie" />
         </div>
       </div>
-      <div v-else>Non è stato trovato nessun risultato</div>
+      <div v-else-if="!getFirstSearch" >Non è stato trovato nessun risultato</div>
     </div>
   </div>
 </template>
@@ -35,6 +35,9 @@ export default {
     },
     getSeriesList() {
       return state.series;
+    },
+    getFirstSearch() {
+      return state.firstSearch;
     },
   },
   components: { TheCard },

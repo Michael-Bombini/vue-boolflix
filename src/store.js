@@ -6,5 +6,6 @@ export const state = Vue.observable({
   series: [],
   searched: "",
   currentLanguage : "it",
+  firstSearch : true,
 });
 
