@@ -34,12 +34,12 @@
         <p class="card-text py-4">{{card.overview}}</p>
 
 
-          <!-- <div  v-if="cast">
+          <div  v-if="cast">
 
             <p class="text-light">{{cast[0].character}}</p>
           <img :src="`https://image.tmdb.org/t/p/original/${cast[0].profile_path}`" alt="" class="cast-icon">
              <p class="text-light">{{cast[0].character}}</p>
-          </div> -->
+          </div>
 
       </div>
     </div>
@@ -47,7 +47,7 @@
 </template>
 
 <script>
-// import axios from 'axios';
+import axios from 'axios';
 
 export default {
   name: "TheCard",
@@ -63,18 +63,21 @@ export default {
     printVoto(voto) {
       return Math.round(voto / 2);
     },
-    // fetchCast(){
-    //   const idHover = this.card.id;
-    //      axios
-    //       .get(`https://api.themoviedb.org/3/movie/${idHover}/credits`, {
-    //         params: {
-    //           api_key: "049efd07b3cd401f7f0d67417708f39c",
-    //         },
-    //       })
-    //       .then((response) => {
-    //         this.cast = response.data.cast;
-    //       });
-    // }
+    fetchCast(){
+      const idHover = this.card.id;
+         axios
+          .get(`https://api.themoviedb.org/3/movie/${idHover}/credits`, {
+            params: {
+              api_key: "049efd07b3cd401f7f0d67417708f39c",
+            },
+          })
+          .then((response) => {
+            this.cast = response.data.cast;
+          },
+          ).catch()
+            
+          ;
+    }
   },
 
 };
