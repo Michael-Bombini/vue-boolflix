@@ -12,9 +12,10 @@
         <h3 class="card-title" v-else>{{card.name}}</h3>
         <h6 class="card-title" v-if="card.original_title!==undefined">{{ card.original_title }}</h6>
         <h6 class="card-title" v-else>{{ card.original_name}}</h6>
-        <lang-flag :iso="card.original_language " />
-        <p class="card-text">Descrizione.....</p>
-        <p>Voto {{ printVoto(card.vote_average) }}</p>
+        <lang-flag class="py-3" :iso="card.original_language " />
+        <div>
+
+ 
         <span v-for="n in 5" :key="n">
           <img
             src="https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/512x512/star.png"
@@ -29,6 +30,8 @@
             v-else
           />
         </span>
+        </div>
+        <p class="card-text py-4">{{card.overview}}</p>
       </div>
     </div>
   </div>
@@ -49,7 +52,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.card-body {display: none;}
+.card-body {display: none; overflow: auto;}
 .card {
 
 
